@@ -1,0 +1,100 @@
+// Place all the styles related to the persons controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+h2.main_title,  h2.main_title {
+	margin: 0 auto;
+	margin-top: 50px;
+	margin-bottom: 20px;
+    font-size: 45px;
+    letter-spacing: 1px;
+    color: #333287 !important;
+    text-shadow: 0 0 2px #333287;
+    text-align: center;
+}
+
+@mixin devise_container_properties {
+	padding: 40px 15px;
+	margin: 0 auto;
+	margin-bottom: 20px;
+	width: 400px;
+	background-color: rgba(255,255,255,0.95);
+	border: 1px solid #dcdce8;
+	border-radius: 3px;
+	text-align: center;
+}
+
+.devise_container {
+	@include devise_container_properties;
+	.new_user {
+		margin: 0 auto;
+		width: 275px;
+		color: #444744;
+		text-align: left;
+		font-size: 15px;
+		font-weight: 500;
+		letter-spacing: 1px;
+		
+		.field {
+			margin-bottom: 15px;
+			position: relative;
+		}
+
+		input {
+			height: 25px;
+			font-size: 15px;
+			font-weight: 200;
+			border-radius: 3px; 
+			border: 1px solid #dcdce8;
+		}
+
+		.field input {
+			width: 260px;
+			padding-left: 10px;
+			margin-top: 5px;
+		}
+
+		.field a {
+			position: absolute;
+			top: 0;
+			right: 0;
+			color: #333287 !important;
+		}
+
+		.actions input {
+			display: inline-block;
+			width: 273px;
+			height: 30px;
+			color: #fff;
+			font-weight: 600;
+			margin-top: 5px;
+			background: linear-gradient(#4f724c, #7ac976);
+			border: 1px solid #7dba78;
+			cursor: pointer
+		}
+	}
+}
+
+.notice, .alert, #error_explanation {
+	@include devise_container_properties;
+	font-size: 14px;
+	border: 1px solid #bac6d3;
+	padding: 10px 15px;
+}
+
+.notice {
+	background-color: #fbfcde;
+	color: #918610;
+	border-color: #d0d1b1;
+}
+
+.alert, #error_explanation {
+	color: #911;
+    background-color: #fcdede;
+    border-color: #d2b2b2;
+
+    ul {
+    	text-align: left;
+    }
+}
+
