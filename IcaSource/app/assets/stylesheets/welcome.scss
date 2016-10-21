@@ -1,3 +1,15 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.message {
+	font-size: 27px;
+	line-height: 1.0625;
+	font-weight: 200;
+	letter-spacing: -.015em;
+	padding-top: 100px;
+	font-family: "Myriad Set Pro 200", "Myriad Set Pro", "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", "Verdana", "sans-serif"
+}
+
+.landscape {
+	margin: 0 auto;
+	margin-top: 50px;
+	width: 700px;
+	height: 500px;
+}

@@ -1,32 +1,36 @@
-// Place all the styles related to the persons controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-h2.main_title,  h2.main_title {
+.main_title {
 	margin: 0 auto;
-	margin-top: 50px;
+	margin-top: 100px;
 	margin-bottom: 20px;
-    font-size: 45px;
-    letter-spacing: 1px;
-    color: #333287 !important;
-    text-shadow: 0 0 2px #333287;
+    font-size: 40px;
     text-align: center;
 }
 
 @mixin devise_container_properties {
-	padding: 40px 15px;
 	margin: 0 auto;
 	margin-bottom: 20px;
 	width: 400px;
-	background-color: rgba(255,255,255,0.95);
-	border: 1px solid #dcdce8;
 	border-radius: 3px;
 	text-align: center;
 }
 
+@mixin button_properties {
+	display: inline-block;
+	width: 273px;
+	height: 30px;
+	color: #fff;
+	font-weight: 600;
+	margin-top: 5px;
+	cursor: pointer;
+}
+
 .devise_container {
 	@include devise_container_properties;
-	.new_user {
+	background-color: rgba(255,255,255,0.95);
+	border: 1px solid #dcdce8;
+	padding: 40px 15px;
+	
+	form {
 		margin: 0 auto;
 		width: 275px;
 		color: #444744;
@@ -62,16 +66,17 @@ h2.main_title,  h2.main_title {
 		}
 
 		.actions input {
-			display: inline-block;
-			width: 273px;
-			height: 30px;
-			color: #fff;
-			font-weight: 600;
-			margin-top: 5px;
+			@include button_properties;
 			background: linear-gradient(#4f724c, #7ac976);
 			border: 1px solid #7dba78;
-			cursor: pointer
 		}
+	}
+
+	.delete_account {
+			@include button_properties;
+			margin-top: 40px;
+			background: linear-gradient(#724c4c, #c97676);
+			border: 1px solid #ba7878;
 	}
 }
 

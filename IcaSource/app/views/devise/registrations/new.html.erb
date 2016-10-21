@@ -1,4 +1,4 @@
-<h2 class="main_title">Sign up to Ica</h2>
+<h1 class="app_text main_title">Sign up to Ica</h1>
   <% if notice %>
     <p class="notice"></p>
   <% end %>
@@ -8,6 +8,10 @@
   <%= devise_error_messages! %>
 <div class="devise_container">
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :name %><br/>
+      <%= f.text_field :name %>
+    </div>
     <div class="field">
       <%= f.label :email %><br />
       <%= f.email_field :email %>
