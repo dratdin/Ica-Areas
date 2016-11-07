@@ -15,3 +15,7 @@ Ica areas a web application that allows you to create a platforms with the media
 ## Data Base
 
 * SQLite version 3.14.0
+
+## Start page 
+
+![alt-текст](https://github.com/dratdin/Ica-Areas/blob/master/documentation/start-page.png?raw=true "Ica start page")
