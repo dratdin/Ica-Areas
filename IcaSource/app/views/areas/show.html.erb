@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> title:</strong>
+  <%= @area.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @area.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @area.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_area_path(@area) %> |
+<%= link_to 'Delete', @area, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', areas_path %>

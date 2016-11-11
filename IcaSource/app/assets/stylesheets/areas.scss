@@ -1,0 +1,88 @@
+// Place all the styles related to the Areas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.app-text {
+	font-family: "Myriad Set Pro 300", "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	line-height: 1.125;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+.cover-empty-wrap {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	padding-top: 190px;
+
+	h1 {
+		margin: 0 auto;
+		display: block;
+		padding: 50px 90px;
+		width: 920px;
+		height: 50px;
+		background: white;
+		font-size: 40px;
+	}
+}
+
+.areas-container {
+	width: 920px;
+	background: white;
+	margin: 0 auto;
+	padding: 0 90px;
+	
+	.area-link {
+		margin-right: 30px;
+		margin-bottom: 30px;
+		.area {
+			position: relative;
+			display: inline-block;
+			width: 440px;
+			height: 440px;
+			padding: 0;
+			margin: 0;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			border: 1px solid #ccc;
+
+			.area-text {
+				position: absolute;
+				margin: 0;
+				padding: 20px 0;
+				background: rgba(0,0,0,.7); 
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				text-align: center;
+				color: white;
+
+				h3, p {
+					margin: 0;
+					padding: 0;
+				}
+			}
+		}
+	}
+
+	.area-link:nth-child(2n) {
+		margin-right: 0;
+	}
+
+	.area:hover .area-delete {
+		display: block;
+	}
+	
+	#notice {
+		margin: 0;
+		font-size: 14px;
+		border: 1px solid #bac6d3;
+		padding: 10px 15px;
+		background-color: #fbfcde;
+		color: #918610;
+		border-color: #d0d1b1;
+	}
+}

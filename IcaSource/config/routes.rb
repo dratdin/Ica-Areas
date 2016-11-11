@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :areas
   devise_for :users
   get 'persons/profile'
 
