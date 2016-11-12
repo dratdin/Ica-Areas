@@ -10,28 +10,54 @@
 }
 
 .cover-empty-wrap {
-	position: relative;
 	margin: 0;
 	padding: 0;
 	background-color: #000;
 	padding-top: 190px;
 
-	h1 {
+	.areas-header {
 		margin: 0 auto;
 		display: block;
 		padding: 50px 90px;
 		width: 920px;
 		height: 50px;
 		background: white;
-		font-size: 40px;
+
+		h1 {
+			position: relative;
+			padding: 0;
+			margin: 0;
+			font-size: 40px;
+		}
+
+		.add-area {
+			position: absolute;
+			padding: 2px 5px;
+			right: 0;
+			top: 0;
+  			bottom: 0;
+  			margin: auto 0;
+  			height: 45%;
+			font-size: 19px;
+			font-weight: 200;
+			color: #fff;
+		    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+		    background-color: #6cc644;
+		    background-image: -webkit-linear-gradient(#91dd70, #55ae2e);
+		    background-image: linear-gradient(#91dd70, #55ae2e);
+		    border: 1px solid #5aad35;
+		    border-radius: 5px;
+		}
 	}
 }
 
 .areas-container {
 	width: 920px;
-	background: white;
-	margin: 0 auto;
 	padding: 0 90px;
+	padding-bottom: 100px; 
+	margin: 0 auto;
+	margin-bottom: 200px;
+	background: white;
 	
 	.area-link {
 		margin-right: 30px;
@@ -74,15 +100,5 @@
 
 	.area:hover .area-delete {
 		display: block;
-	}
-	
-	#notice {
-		margin: 0;
-		font-size: 14px;
-		border: 1px solid #bac6d3;
-		padding: 10px 15px;
-		background-color: #fbfcde;
-		color: #918610;
-		border-color: #d0d1b1;
 	}
 }

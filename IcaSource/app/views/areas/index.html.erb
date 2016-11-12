@@ -1,11 +1,15 @@
 <div class="cover-empty-wrap">
-  <h1 class="app-text">Your Areas</h1>
+  
+  <div class="areas-header">
+    <h1 class="app-text">Your Areas
+      <%= link_to new_area_path  do %>
+        <div class="add-area">New</div>
+      <% end %>
+    </h1>
+  </div>
 </div>
 
 <div class="areas-container">
-  <% if notice %>
-    <p id="notice"><%= notice %></p>
-  <% end %>
   <% @areas.each do |area| %>
       <%= link_to area, class: "area-link" do%>
         <div class="area" style="background-image: url(<%= asset_path area.image_url %>);">
@@ -17,5 +21,4 @@
       <% end %>
   <% end %>
   <br>
-  <%= link_to 'New Area', new_area_path %>
 </div>
