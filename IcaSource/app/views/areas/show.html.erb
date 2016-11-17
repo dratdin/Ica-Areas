@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="cover-empty-wrap">
+  <div class="areas-header">
+    <h1 class="app-text"><%= @area.title %>
+      <div class="area-buttons">
+        <%= link_to 'Stylize', edit_area_path(@area), class: "area-button area-button" %>
+        <%= link_to 'Edit', edit_area_path(@area), class: "area-button area-button" %>
+        <%= link_to 'Back', areas_path, class: "area-button" %>
+        <%= link_to 'Delete', @area, method: :delete, data: { confirm: 'Are you sure?' },
+           class: "area-button delete-area-button" %>
+      </div>
+    </h1>
+  </div>
+</div>
 
-<p>
-  <strong> title:</strong>
-  <%= @area.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @area.description %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @area.image_url %>
-</p>
-
-<%= link_to 'Edit', edit_area_path(@area) %> |
-<%= link_to 'Delete', @area, method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', areas_path %>
+<div class="app-text areas-container">
+	<% @area.resources.each do |res| %>
+    <%= link_to "/resources/#{res.id}" do %>
+      <%= res.title %> <br>
+    <% end %>
+  <% end %>
+</div>

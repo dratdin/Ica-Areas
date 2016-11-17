@@ -1,10 +1,9 @@
 <div class="cover-empty-wrap">
-  
   <div class="areas-header">
     <h1 class="app-text">Your Areas
-      <%= link_to new_area_path  do %>
-        <div class="add-area">New</div>
-      <% end %>
+        <div class="area-buttons">
+          <%= link_to 'New', new_area_path, class: "area-button add-area-button" %>
+        </div>
     </h1>
   </div>
 </div>

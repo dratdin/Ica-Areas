@@ -1,17 +1,7 @@
 // Place all the styles related to the Areas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-.app-text {
-	font-family: "Myriad Set Pro 300", "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-	line-height: 1.125;
-    font-weight: 100;
-    letter-spacing: 1px;
-}
-
 .cover-empty-wrap {
-	margin: 0;
-	padding: 0;
 	background-color: #000;
 	padding-top: 190px;
 
@@ -25,40 +15,61 @@
 
 		h1 {
 			position: relative;
-			padding: 0;
-			margin: 0;
 			font-size: 40px;
 		}
 
-		.add-area {
+		.area-buttons {
 			position: absolute;
-			padding: 2px 5px;
+			margin: auto 0;
 			right: 0;
 			top: 0;
-  			bottom: 0;
-  			margin: auto 0;
-  			height: 45%;
-			font-size: 19px;
-			font-weight: 200;
-			color: #fff;
-		    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
-		    background-color: #6cc644;
+			bottom: 0;
+			height: 45%;
+
+			.area-button {
+				display: inline-block;
+				padding: 2px 5px;
+				color: #fff;
+				font-size: 18px;
+				font-weight: 200;
+			  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+		    border: 1px solid #a0a0a0;
+		    border-radius: 5px;
+				background-color: #7c7c7c;
+		    background-image: -webkit-linear-gradient(#7c7c7c, #595959);
+		    background-image: linear-gradient(#7c7c7c, #595959);
+
+		    &:hover {
+		    	cursor: pointer;
+		    }
+			}
+
+			.add-area-button {
+				border: 1px solid #5aad35;
+				background-color: #6cc644;
 		    background-image: -webkit-linear-gradient(#91dd70, #55ae2e);
 		    background-image: linear-gradient(#91dd70, #55ae2e);
-		    border: 1px solid #5aad35;
-		    border-radius: 5px;
+			}
+
+			.delete-area-button {
+				border: 1px solid #e29393;
+		    background-image: -webkit-linear-gradient(#c97676, #a05555);
+		    background-image: linear-gradient(#c97676, #a05555);
+			}
 		}
+
+
 	}
 }
 
 .areas-container {
 	width: 920px;
 	padding: 0 90px;
-	padding-bottom: 100px; 
+	padding-bottom: 100px;
 	margin: 0 auto;
 	margin-bottom: 200px;
 	background: white;
-	
+
 	.area-link {
 		margin-right: 30px;
 		margin-bottom: 30px;
@@ -67,8 +78,6 @@
 			display: inline-block;
 			width: 440px;
 			height: 440px;
-			padding: 0;
-			margin: 0;
 			background-repeat: no-repeat;
 			background-size: cover;
 			background-position-x: 50%;
@@ -79,26 +88,65 @@
 				position: absolute;
 				margin: 0;
 				padding: 20px 0;
-				background: rgba(0,0,0,.7); 
+				background: rgba(0,0,0,.7);
 				width: 100%;
 				left: 0;
 				bottom: 0;
 				text-align: center;
 				color: white;
-
-				h3, p {
-					margin: 0;
-					padding: 0;
-				}
 			}
 		}
 	}
-
 	.area-link:nth-child(2n) {
 		margin-right: 0;
 	}
-
 	.area:hover .area-delete {
 		display: block;
+	}
+}
+
+
+.new-area-content {
+	width: 400px;
+
+	.field {
+		margin-bottom: 15px;
+
+		label {
+			font-weight: 500;
+			font-size: 13px;
+		}
+
+		input, textarea {
+			width: 100%;
+			height: 25px;
+			margin-top: 10px;
+			border-radius: 1px;
+			border: 1px solid #ccc;
+		}
+
+		textarea {
+			height: 150px;
+		}
+	}
+
+	.actions {
+		text-align: right;
+
+		input {
+			color: #fff;
+			display: inline-block;
+			width: 100px;
+			height: 25px;
+			margin-top: 10px;
+			border-radius: 2px;
+			border: 1px solid #ccc;
+			background: linear-gradient(#4f724c, #7ac976);
+			border: 1px solid #7dba78;
+			font-size: 14px;
+			&:hover {
+	    		cursor: pointer;
+	    	}
+		}
 	}
 }

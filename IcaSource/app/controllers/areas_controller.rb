@@ -1,4 +1,5 @@
 class AreasController < ApplicationController
+  include CurrentArea
   before_filter :authenticate_user!
   before_action :set_area, only: [:show, :edit, :update, :destroy]
 
@@ -11,6 +12,7 @@ class AreasController < ApplicationController
   # GET /areas/1
   # GET /areas/1.json
   def show
+    set_current_area
   end
 
   # GET /areas/new
@@ -25,14 +27,13 @@ class AreasController < ApplicationController
   # POST /areas
   # POST /areas.json
   def create
-    @area = Area.new(area_params)
-    @area.user_id = current_user.id
+    @area = current_user.areas.create(area_params)
     respond_to do |format|
       if @area.save
-        format.html { redirect_to @area, notice: 'Area was successfully created.' }
+        format.html { redirect_to areas_url }
         format.json { render :show, status: :created, location: @area }
       else
-        format.html { render :new }
+        format.html { render :new}
         format.json { render json: @area.errors, status: :unprocessable_entity }
       end
     end
@@ -43,7 +44,7 @@ class AreasController < ApplicationController
   def update
     respond_to do |format|
       if @area.update(area_params)
-        format.html { redirect_to @area, notice: 'Area was successfully updated.' }
+        format.html { redirect_to areas_url }
         format.json { render :show, status: :ok, location: @area }
       else
         format.html { render :edit }
@@ -57,7 +58,7 @@ class AreasController < ApplicationController
   def destroy
     @area.destroy
     respond_to do |format|
-      format.html { redirect_to areas_url, notice: 'Area was successfully destroyed.' }
+      format.html { redirect_to areas_url }
       format.json { head :no_content }
     end
   end

@@ -12,24 +12,25 @@
 			<div class="menu-container">
 				<% if user_signed_in? %>
 					<div class="user-actions">
-						<%= link_to 'Edit Profile', edit_user_registration_path, class: "menu-text"%>
-						<%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "menu-text" %>
+						<div class="menu-text user-name menu-item"><%= current_user.name %></div> 
+						<%= link_to 'Edit Profile', edit_user_registration_path, class: "menu-text menu-item"%>
+						<%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: "menu-text menu-item" %>
 					</div>
 					<%= link_to "Ica", root_path , class: "logo" %>
 					<div class="ica-actions">
-						<%= link_to areas_path, class: "areas-button" do %>
+						<%= link_to areas_path, class: "areas-button menu-item" do %>
 							<%= render 'svg/areas_button' %>
 						  <% end %>
-						<input type="text" name="search" class="menu-text ts_input" value="Search...">
+						<input type="text" name="search" class="menu-text menu-item ts_input" value="Search...">
 					</div>
 				<% else %>
 				    <div class="user-actions">
-						<%= link_to 'Sign In', new_user_session_path, class: "menu-text" %>
-						<%= link_to 'Sign Up', new_user_registration_path, class: "menu-text" %>
+						<%= link_to 'Sign In', new_user_session_path, class: "menu-text menu-item" %>
+						<%= link_to 'Sign Up', new_user_registration_path, class: "menu-text menu-item" %>
 					</div>
 					<%= link_to "Ica", root_path , class: "logo" %>
 					<div class="ica-actions">
-						<input type="text" name="search" class="menu-text ts_input" value="Search...">
+						<input type="text" name="search" class="menu-text menu-item ts_input" value="Search...">
 					</div>
 				<% end %>
 			</div>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @resource.title %>
+</p>
+<p>
+  <strong>Text content:</strong>
+  <%= @resource.text_content %>
+</p>
+<p>
+  <strong>File_url:</strong>
+  <%= @resource.file.url %>
+</p>
+
+<%= link_to 'Edit', edit_resource_path(@resource) %> |
+<%= link_to 'Back', "/areas/#{@resource.area_id}" %>
