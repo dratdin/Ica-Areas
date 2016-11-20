@@ -1,8 +1,8 @@
 <div class="cover-empty-wrap">
   <div class="areas-header">
-    <h1 class="app-text">Editing resource
+    <h1 class="app-text">New image
       <div class="area-buttons">
-        <%= link_to '→', area_path(@current_area), class: "ica-button" %>
+        <%= link_to '→', area_path(@current_area), method: :get, class: "ica-button" %>
       </div>
     </h1>
   </div>
@@ -10,6 +10,6 @@
 
 <div class="areas-container">
     <div class="app-text form-content">
-      <%= render 'form' %>
+      <%= render 'form_image' %>
     </div>
 </div>

@@ -33,7 +33,7 @@ class AreasController < ApplicationController
         format.html { redirect_to areas_url }
         format.json { render :show, status: :created, location: @area }
       else
-        format.html { render :new}
+        format.html { render :new }
         format.json { render json: @area.errors, status: :unprocessable_entity }
       end
     end

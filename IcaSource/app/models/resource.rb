@@ -1,7 +1,21 @@
 class Resource < ActiveRecord::Base
-	TYPES = ['Text', 'Link', 'Image', 'Video', 'Audio']
   has_attached_file :file
   has_attached_file :addition_file
 
-	belongs_to :area
+  validates_attachment_content_type :file, :content_type => ["image/jpg", "image/jpeg", "image/png", "file/gif"]
+  validate :type_independet?
+
+  belongs_to :area
+
+  private
+    def type_independet?
+      case @resource.resource_type
+        when 'Link'
+          validate :title, :text_content, :addition_file, presence: true
+        when 'Image'
+          validate :title, :text_content, :file, presence: true
+        when 'Text'
+          validate :title, :text_content, presence: true
+      end
+    end
 end

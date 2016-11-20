@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161117192235) do
+ActiveRecord::Schema.define(version: 20161118091007) do
 
   create_table "areas", force: :cascade do |t|
     t.string   "title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20161117192235) do
     t.string   "addition_file_content_type"
     t.integer  "addition_file_file_size"
     t.datetime "addition_file_updated_at"
+    t.string   "resource_type"
   end
 
   add_index "resources", ["area_id"], name: "index_resources_on_area_id"

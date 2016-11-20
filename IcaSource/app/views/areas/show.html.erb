@@ -2,11 +2,11 @@
   <div class="areas-header">
     <h1 class="app-text"><%= @area.title %>
       <div class="area-buttons">
-        <%= link_to 'Stylize', edit_area_path(@area), class: "area-button area-button" %>
-        <%= link_to 'Edit', edit_area_path(@area), class: "area-button area-button" %>
-        <%= link_to 'Back', areas_path, class: "area-button" %>
-        <%= link_to 'Delete', @area, method: :delete, data: { confirm: 'Are you sure?' },
-           class: "area-button delete-area-button" %>
+        <%= link_to 'Link', new_link_path, class: "ica-button green-button" %>
+        <%= link_to 'Image', new_image_path, class: "ica-button green-button" %>
+        <%= link_to 'Text', new_text_path, class: "ica-button green-button" %>
+        <%= link_to 'Delete Area', @area, method: :delete, data: { confirm: 'Are you sure?' },
+           class: "ica-button red-button" %>
       </div>
     </h1>
   </div>
@@ -14,8 +14,24 @@
 
 <div class="app-text areas-container">
 	<% @area.resources.each do |res| %>
-    <%= link_to "/resources/#{res.id}" do %>
-      <%= res.title %> <br>
+    <%= content_tag :div, class: "res #{res.resource_type.downcase} app-text" do %>
+      <%= content_tag :div, class: "actions" do %>
+        <%= link_to 'Edit', edit_resource_path(res) %>
+        <%= link_to 'X', res, method: :delete %>
+      <% end %>
+      <%= content_tag :h3, res.title, class: "app-text" %>
+      <% case res.resource_type
+         when 'Text' %>
+        <%= content_tag :p, res.text_content %>
+        <%= image_tag(res.addition_file.url) %>
+      <% when 'Link' %>
+        <%= link_to res.text_content { contant_tag :p, res.title } %>
+        <%= image_tag(res.addition_file.url) %>
+      <% when 'Image' %>
+        <%= image_tag(res.file.url) %>
+        <%= content_tag :h3, res.text_content, class: "app-text" %>
+      <% end %>
+
     <% end %>
   <% end %>
 </div>
