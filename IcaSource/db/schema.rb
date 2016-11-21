@@ -11,15 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161118091007) do
+ActiveRecord::Schema.define(version: 20161121154856) do
 
   create_table "areas", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "image_url"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "areas", ["user_id"], name: "index_areas_on_user_id"

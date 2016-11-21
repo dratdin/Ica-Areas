@@ -11,7 +11,7 @@
 <div class="areas-container">
   <% @areas.each do |area| %>
       <%= link_to area, class: "area-link" do%>
-        <div class="area" style="background-image: url(<%= asset_path area.image_url %>);">
+        <div class="area" style="background-image: url(<%= asset_path area.image.url %>);">
           <span class="area-text">
             <h3 class="app-text"><%= area.title %></h3>
             <p class="app-text"><%= area.description %></p>

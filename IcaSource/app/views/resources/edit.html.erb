@@ -1,6 +1,6 @@
 <div class="cover-empty-wrap">
   <div class="areas-header">
-    <h1 class="app-text">Editing resource
+    <h1 class="app-text">Editing <%= @resource.resource_type %>
       <div class="area-buttons">
         <%= link_to '→', area_path(@current_area), class: "ica-button" %>
       </div>
@@ -10,6 +10,13 @@
 
 <div class="areas-container">
     <div class="app-text form-content">
-      <%= render 'form' %>
+      <% case @resource.resource_type
+         when 'Link' %>
+          <%= render 'form_link' %>
+      <% when 'Image' %>
+          <%= render 'form_image' %>
+      <% when 'Text' %>
+          <%= render 'form_text' %>
+      <% end %>
     </div>
 </div>

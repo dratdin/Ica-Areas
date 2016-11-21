@@ -5,7 +5,7 @@ module CurrentArea
     session[:area_id] = @area.id
   end
 
-  public
+  private
     def current_area
       Area.find(session[:area_id])
     end

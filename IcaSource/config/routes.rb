@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   get '/resorces/new_link', to: 'resources#new_link', as: 'new_link'
   get '/resorces/new_image', to: 'resources#new_image', as: 'new_image'
   get '/resorces/new_text', to: 'resources#new_text', as: 'new_text'
+
   resources :resources, except: [:index, :new]
+
   resources :areas
   devise_for :users
   get 'persons/profile'

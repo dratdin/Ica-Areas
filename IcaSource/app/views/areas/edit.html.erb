@@ -1,5 +1,15 @@
-<h1>Editing Area</h1>
+<div class="cover-empty-wrap">
+  <div class="areas-header">
+    <h1 class="app-text">Editing area
+      <div class="area-buttons">
+        <%= link_to '→', @area, class: "ica-button" %>
+      </div>
+    </h1>
+  </div>
+</div>
 
-<%= link_to 'New resource', new_resource_path %>
-
-<%= link_to 'Back', @area %>
+<div class="areas-container">
+    <div class="app-text form-content">
+      <%= render 'form' %>
+    </div>
+</div>
