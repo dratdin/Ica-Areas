@@ -11,7 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161016113624) do
+ActiveRecord::Schema.define(version: 20161121154856) do
+
+  create_table "areas", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "areas", ["user_id"], name: "index_areas_on_user_id"
+
+  create_table "resources", force: :cascade do |t|
+    t.string   "title"
+    t.text     "text_content"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.integer  "area_id"
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.string   "addition_file_file_name"
+    t.string   "addition_file_content_type"
+    t.integer  "addition_file_file_size"
+    t.datetime "addition_file_updated_at"
+    t.string   "resource_type"
+  end
+
+  add_index "resources", ["area_id"], name: "index_resources_on_area_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

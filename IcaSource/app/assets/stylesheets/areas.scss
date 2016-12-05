@@ -1,0 +1,193 @@
+// Place all the styles related to the Areas controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// AREA HEADER
+.cover-empty-wrap {
+	background-color: #000;
+	padding-top: 190px;
+
+	.areas-header {
+		margin: 0 auto;
+		display: block;
+		padding: 50px 90px;
+		width: 920px;
+		height: 50px;
+		background: white;
+
+		h1 {
+			position: relative;
+			font-size: 40px;
+		}
+		.area-buttons {
+			position: absolute;
+			right: 0;
+			top: -10px;
+		}
+	}
+}
+
+.areas-container {
+	width: 920px;
+	padding: 0 90px;
+	padding-bottom: 100px;
+	margin: 0 auto;
+	margin-bottom: 200px;
+	background: white;
+
+	.area-link {
+		margin-right: 30px;
+		margin-bottom: 30px;
+
+		.area {
+			position: relative;
+			display: inline-block;
+			width: 440px;
+			height: 440px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-position-x: 50%;
+			background-position-y: 50%;
+			border: 1px solid #ccc;
+
+			.area-text {
+				position: absolute;
+				margin: 0;
+				padding: 20px 0;
+				background: rgba(0,0,0,.7);
+				width: 100%;
+				left: 0;
+				bottom: 0;
+				text-align: center;
+				color: white;
+			}
+		}
+	}
+	.area-link:nth-child(2n) {
+		margin-right: 0;
+	}
+	.area:hover .area-delete {
+		display: block;
+	}
+}
+
+.form-content {
+	width: 400px;
+	margin: 0 auto;
+
+	.field {
+		margin-bottom: 15px;
+		label {
+			font-weight: 500;
+			font-size: 13px;
+		}
+		input, textarea {
+			width: 100%;
+			height: 25px;
+			margin-top: 10px;
+			border-radius: 1px;
+			border: 1px solid #ccc;
+		}
+		textarea {
+			height: 150px;
+		}
+	}
+	.actions {
+		text-align: right;
+	}
+}
+
+// AREA CONTENT
+.res {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	color: #fff;
+	border: 1px solid #eaeaea;
+
+	h3 {
+		font-size: 22px;
+		text-align: center;
+	}
+	.actions {
+		position: absolute;
+		display: none;
+		height: 20px;
+		top: -20px;
+		right: 10px;
+		a {
+			font-weight: bold;
+			font-size: 15px;
+		}
+	}
+	&:hover {
+		.actions{
+			display: block;
+		}
+	}
+}
+
+.image {
+	border: 0;
+	text-align: center;
+	max-width: 600px;
+
+	h3 {
+		position: absolute;
+		padding: 15px;
+		top: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0,0,0,.7);
+		text-align: center;
+	}
+	img {
+		max-width: 600px;
+	}
+}
+
+.link {
+	color: white;
+	width: 400px;
+	height: 100px;
+	font-size: 0;
+
+	h3 {
+		display: inline-block;
+		padding: 20px 0;
+		height: 60px;
+		width: 300px;
+		font-size: 22px;
+		vertical-align: top;
+		text-align: center;
+		text-decoration: underline;
+	}
+
+	.image-container {
+		display: inline-block;
+		vertical-align: top;
+		height: 100px;
+		width: 100px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position-x: 50%;
+		background-position-y: 50%;
+	}
+}
+
+.text {
+	width: 700px;
+	color: #000;
+
+	h3 {
+		font-size: 22px;
+		padding: 20px 0;
+		font-weight: 400;
+	}
+	p {
+		font-weight: 300;
+		padding: 0 50px;
+		padding-bottom: 20px;
+		line-height: 2;
+	}
+}

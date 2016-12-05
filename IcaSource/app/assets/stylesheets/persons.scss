@@ -29,7 +29,7 @@
 	background-color: rgba(255,255,255,0.95);
 	border: 1px solid #dcdce8;
 	padding: 40px 15px;
-	
+
 	form {
 		margin: 0 auto;
 		width: 275px;
@@ -37,8 +37,7 @@
 		text-align: left;
 		font-size: 15px;
 		font-weight: 500;
-		letter-spacing: 1px;
-		
+
 		.field {
 			margin-bottom: 15px;
 			position: relative;
@@ -48,7 +47,7 @@
 			height: 25px;
 			font-size: 15px;
 			font-weight: 200;
-			border-radius: 3px; 
+			border-radius: 3px;
 			border: 1px solid #dcdce8;
 		}
 
@@ -62,7 +61,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			color: #333287 !important;
+			color: #333287;
 		}
 
 		.actions input {
@@ -74,7 +73,7 @@
 
 	.delete_account {
 			@include button_properties;
-			margin-top: 40px;
+			margin-top: 20px;
 			background: linear-gradient(#724c4c, #c97676);
 			border: 1px solid #ba7878;
 	}

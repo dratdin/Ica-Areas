@@ -14,11 +14,14 @@
  *= require_self
  */
 
-html, body {
-	position: relative;
+* {
 	padding: 0;
 	margin: 0;
-	background: #fafafa;
+}
+
+html, body {
+	position: relative;
+	background: #ebebeb;
 }
 
 a {
@@ -27,99 +30,126 @@ a {
 }
 
 .container {
+	width: 1100px;
 	margin: 0 auto;
 	text-align: center;
 }
 
-.app_text {
-	line-height: 1.0625;
-	font-weight: 200;
-	letter-spacing: -.015em;
-	font-family: "Myriad Set Pro 200", "Myriad Set Pro", "Lucida Grande", "Helvetica Neue", "Helvetica", "Arial", "Verdana", "sans-serif";
+.app-text {
+	font-family: "Myriad Set Pro 300", "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	line-height: 1.125;
+    font-weight: 100;
+    letter-spacing: 1px;
 }
 
 .menu {
-	margin: 0 auto;
-	width: 80%;
-	position: fixed;
-	top: 0;
-	padding: 0 10%;
-	text-align: center;
     background: rgba(35, 34, 35, 0.9);
 
-	ul, ul li, .logo {
-		display: inline-block;
-		list-style: none;
-		vertical-align: middle;
-		margin: 0;
+    .menu-text {
+		font-size: 14px;
+	    line-height: 1.6;
+	    font-weight: 300;
+	    letter-spacing: 0.8px;
+	    color: #fff;
+	    text-shadow: 0 1px 1px rgba(28, 115, 184, 0.64);
+	    white-space: nowrap;
+	    font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	}
 
-	ul {
-		padding: 0;
-		width: 45%;
+    .menu-container {
+    	font-size: 0;
+		width: 1100px;
+		margin: 0 auto;
 
-		li a {
-			position: relative;
-			margin-left: 15px;
-			font-size: 14px;
-		    line-height: 1.6;
-		    font-weight: 500;
-		    letter-spacing: normal;
-		    color: #ffffff;
-		    cursor: pointer;
-		    display: inline-block;
-		    padding: 0 15px;
-		    text-align: center;
-		    text-shadow: 0 1px 1px rgba(28, 115, 184, 0.64);
-		    white-space: nowrap;
-		    font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		.user-actions, .logo, .ica-actions {
+			display: inline-block;
+			vertical-align: middle;
 		}
 
-		li a:hover {
+		.user-actions, .ica-actions {
+			width: 525px;
+		}
+
+		.user-actions {
+			text-align: left;
+			.menu-item {
+				margin-right: 35px;
+				&:first-child {
+					margin-left: 90px;
+				}
+			}
+			.user-name {
+				display: inline-block;
+				text-decoration: underline;
+			}
+		}
+
+		.ica-actions {
+			text-align: center;
+
+			.menu-item {
+				margin-left: 35px;
+			}
+			.ts_input {
+				padding: 7px 0;
+				padding-left: 30px;
+				width: 155px;
+			    height: 17px;
+			    background-color: transparent;
+			    background: image-url("search.png") 5px 5px no-repeat;
+			    border: none;
+			    color: #cecece;
+			}
+			.areas-button {
+				width: 40px;
+				height: 25px;
+				padding: 5px 0;
+				vertical-align: middle;
+			}
+		}
+
+		a:hover {
+			cursor: pointer;
 			color: #cecece;
 			border-color: #cecece;
 		}
 
-		.ts_input {
-		    padding: 6px 6px 6px 35px;
-		    width: 150px;
-		    height: 17px;
-		    line-height: 16px;
-		    border: none;
-		    background-color: transparent;
-		    background: image-url("search.png") 5px 5px no-repeat; 
-		 	color: white;
-		    font-size: 15px;
-		    font-weight: normal;
+		.logo {
+			/* MENU HEIGHT*/
+			padding: 4px 0;
+			font-size: 30px;
+
+			width: 50px;
+			font-weight: normal;
+			text-align: center;
+			color: #FFF;
 		}
 	}
+}
 
-	.logo {
-		padding: 4px;
-		margin: 0 auto;
-		width: 70px; 
-		font-size: 30px;
-		font-weight: bold;
-		text-align: center;
-		color: #FFF;
+.ica-button {
+	display: inline-block;
+	padding: 10px 10px;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 400;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);
+  border: 1px solid #707570;
+	background-color: #575b57;
+  background-image: -webkit-linear-gradient(#575b57, #424742);
+  background-image: linear-gradient(#575b57, #424742);
+  &:hover {
+		cursor: pointer;
 	}
+}
 
-	.user_photo, .user_name {
-		color: #fff;
-		position: absolute;
-	}
-
-	.user_name {
-		left: 10%;
-		top: 30%;
-		text-decoration: underline;
-	}
-
-	.user_actions {
-		text-align: center;
-	}
-
-	.ica_actions {
-		text-align: right;
-	}
+.red-button {
+	border: 1px solid #a54848;
+  background-image: -webkit-linear-gradient(#a53333, #892626);
+  background-image: linear-gradient(#a53333, #892626);
+}
+.green-button {
+	border: 1px solid #48a54a;
+  background-image: -webkit-linear-gradient(#30a332, #238425);
+  background-image: linear-gradient(#30a332, #238425);
 }

@@ -1,0 +1,15 @@
+<div class="cover-empty-wrap">
+  <div class="areas-header">
+    <h1 class="app-text">New link
+      <div class="area-buttons">
+        <%= link_to '→', @current_area, method: :get, class: "ica-button" %>
+      </div>
+    </h1>
+  </div>
+</div>
+
+<div class="areas-container">
+    <div class="app-text form-content">
+      <%= render 'form_link' %>
+    </div>
+</div>
